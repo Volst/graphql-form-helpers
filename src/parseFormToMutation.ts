@@ -12,14 +12,11 @@ export function parseFormToMutation(values: object, scheme: Scheme): object {
   function applyParentAction(
     _values: object,
     _scheme: Scheme,
-    parentKey?: string,
-    parentValues?: object
+    parentKey: string,
+    parentValues: object
   ) {
     if (!_scheme.__format) {
       return;
-    }
-    if (!parentKey || !parentValues) {
-      throw new Error('Cannot use `__format` at root-level.');
     }
     parentValues[parentKey] = (_scheme.__format as ActionFn)(_values);
   }
@@ -61,7 +58,7 @@ export function connect(id?: string) {
   if (id) {
     return { connect: { id } };
   }
-  return;
+  return undefined;
 }
 
 export function create(values?: object) {

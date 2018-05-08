@@ -1,6 +1,6 @@
 import { parseQueryToForm } from '.';
 
-test('parseQueryToForm - basic', () => {
+test('parseQueryToForm - advanced', () => {
   const input = {
     __typename: 'Card',
     id: 'card-1',
@@ -42,4 +42,14 @@ test('parseQueryToForm - basic', () => {
     ],
     name: 'Summer season'
   });
+});
+
+test('parseQueryToForm - empty', () => {
+  const defaults = { hoi: true };
+  const output = parseQueryToForm(null, defaults);
+  expect(output).toBe(defaults);
+
+  // Completely empty
+  const output2 = parseQueryToForm(null);
+  expect(output2).toEqual({});
 });

@@ -131,19 +131,29 @@ test('parseFormToMutation - save array relations', () => {
 
 test('parseFormToMutation - save object relations', () => {
   const values = {
-    restaurant: { name: 'Red Wheelbarrow' },
-    organization: { id: 'org-1', name: 'fsociety' }
+    restaurant: {
+      id: 'restaurant-1',
+      name: 'Red Wheelbarrow',
+      organization: { name: 'fsociety' }
+    }
   };
   const scheme = {
-    restaurant: save,
-    organization: save
+    restaurant: {
+      __format: save,
+      organization: save
+    }
   };
   const formatted = parseFormToMutation(values, scheme);
 
   expect(formatted).toEqual({
-    restaurant: { create: { name: 'Red Wheelbarrow' } },
-    organization: {
-      update: { where: { id: 'org-1' }, data: { name: 'fsociety' } }
+    restaurant: {
+      update: {
+        where: { id: 'restaurant-1' },
+        data: {
+          name: 'Red Wheelbarrow',
+          organization: { create: { name: 'fsociety' } }
+        }
+      }
     }
   });
 });
@@ -160,4 +170,44 @@ test('parseFormToMutation - should create new object', () => {
 
   expect(formatted).not.toBe(values);
   expect(values.categories[0].id).toBe('category-1');
+});
+
+test('parseFormToMutation - formatting should work without a __format present', () => {
+  const values = {
+    categories: [
+      {
+        items: [{ name: 'Beer' }]
+      }
+    ]
+  };
+  const scheme = {
+    categories: {
+      items: save
+    }
+  };
+  const formatted = parseFormToMutation(values, scheme);
+
+  expect(formatted).toEqual({
+    categories: [{ items: { create: [{ name: 'Beer' }] } }]
+  });
+});
+
+test('parseFormToMutation - should handle empty cases correctly', () => {
+  const values = {
+    restaurant: '',
+    organization: null,
+    categories: null
+  };
+  const scheme = {
+    restaurant: connect,
+    organization: create,
+    categories: save
+  };
+  const formatted = parseFormToMutation(values, scheme);
+
+  expect(formatted).toEqual({
+    restaurant: undefined,
+    organization: undefined,
+    categories: undefined
+  });
 });
