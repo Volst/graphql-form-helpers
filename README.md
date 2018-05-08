@@ -6,8 +6,8 @@ We use it in combination with [Formik](https://github.com/jaredpalmer/formik), [
 
 **Features:**
 
-* Convert data from a form to a GraphQL mutation.
-* Convert data from a GraphQL query to suitable form data.
+* Convert data from a form to a GraphQL mutation ([docs](#from-form-to-mutation))
+* Convert data from a GraphQL query to suitable form data ([docs](#from-query-to-form))
 
 # Motivation
 
