@@ -89,5 +89,5 @@ test('save - accept array', () => {
 });
 
 test('save - throw error on invalid value', () => {
-  expect(() => save(1)).toThrow('Illegal value for save given');
+  expect(() => save(1 as any)).toThrow('Illegal value for save given');
 });
