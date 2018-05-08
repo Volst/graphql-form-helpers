@@ -1,0 +1,54 @@
+{
+  "name": "@volst/graphql-form-helpers",
+  "version": "0.0.0",
+  "description": "Makes it easy to work with nested data in forms with GraphQL",
+  "author": "kees@volst.nl",
+  "repository": "Volst/graphql-form-helpers",
+  "license": "ISC",
+  "private": false,
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "lint": "tslint -p .",
+    "prepublishOnly": "npm run -s build",
+    "precommit": "pretty-quick --staged",
+    "test": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "ci": "npm run -s lint && npm run -s build && npm run -s test-coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@volst/tslint-config": "^0.2.1",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.4.1",
+    "ts-jest": "^22.4.5",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "@types/deep-extend": "^0.4.31",
+    "deep-extend": "^0.5.1",
+    "is-pojo": "^1.0.2"
+  },
+  "peerDependencies": {},
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  }
+}
