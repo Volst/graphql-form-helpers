@@ -28,7 +28,7 @@ npm i @volst/graphql-form-helpers
 
 Imagine you have a form which, when the `onSubmit` event is called, outputs this data:
 
-```jsx
+```js
 const data = {
   restaurant: 'kjrrqxy08001309',
   categories: [
@@ -71,7 +71,7 @@ const graphqlData = {
 
 As you can see this is a lot different to the data we have above. Now you can write some custom code everytime to make it look the same, but I'm already sweating even thinking about that. So we've made something easier:
 
-```jsx
+```js
 import {
   create,
   connect,
@@ -89,7 +89,7 @@ const graphqlData = parseFormToMutation(values, scheme);
 
 But what if you have nested data? Imagine that a category can have items and subitems, the schema would look like this:
 
-```jsx
+```js
 const scheme = {
   restaurant: connect,
   categories: {
