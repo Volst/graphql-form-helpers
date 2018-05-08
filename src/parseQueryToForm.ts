@@ -1,5 +1,5 @@
-import deepExtend from 'deep-extend';
-import isPlainObject from 'is-pojo';
+import * as deepExtend from 'deep-extend';
+import * as isPlainObject from 'is-pojo';
 
 export function parseQueryToForm(data: any, defaults: object): object {
   function removeProps(obj: object, keys: string[]) {
