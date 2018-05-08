@@ -69,7 +69,7 @@ const graphqlData = {
 };
 ```
 
-As you can see this is a lot different to the data we have above. Now you can write some custom code everytime to make it look the same, but I'm already sweating even thinking about that. So we've made something easier:
+As you can see this is a lot different to the data we have above. You could write some custom code everytime to make it look the same, but I'm already sweating even thinking about that. That's where `parseFormToMutation` comes in:
 
 ```js
 import {
