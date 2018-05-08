@@ -123,7 +123,7 @@ function decimalToFloat(value: string | number) {
 
 const scheme = {
   items: {
-    price: decimalToFloat // In this example you could even simply pass `parseFloat` directly
+    price: decimalToFloat // In this example you could even pass `parseFloat` directly
   }
 };
 ```
