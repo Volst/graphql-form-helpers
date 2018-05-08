@@ -1,4 +1,4 @@
-import * as deepExtend from 'deep-extend';
+import * as merge from 'deepmerge';
 import * as isPlainObject from 'is-pojo';
 
 export function parseQueryToForm(data: any, defaults?: object): object {
@@ -13,7 +13,7 @@ export function parseQueryToForm(data: any, defaults?: object): object {
     }
   }
   if (data) {
-    const myData = deepExtend({}, data);
+    const myData = merge({}, data);
     removeProps(myData, ['__typename']);
     delete myData.id;
     return myData;

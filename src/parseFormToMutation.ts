@@ -1,4 +1,4 @@
-import * as deepExtend from 'deep-extend';
+import * as merge from 'deepmerge';
 import * as isPlainObject from 'is-pojo';
 
 export type ActionFn = ((value: any) => any);
@@ -7,7 +7,7 @@ export interface Scheme {
 }
 
 export function parseFormToMutation(values: object, scheme: Scheme): object {
-  const myValues = deepExtend({}, values);
+  const myValues = merge({}, values);
 
   function applyParentAction(
     _values: object,
