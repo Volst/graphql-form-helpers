@@ -10,5 +10,6 @@
     "noUnusedLocals": false,
     "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }
