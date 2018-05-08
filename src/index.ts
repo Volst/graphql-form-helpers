@@ -1,2 +1,7 @@
-export { parseFormToMutation, connect, save, create } from './parseFormToMutation';
-export { parseQueryResultsToForm } from './parseQueryResultsToForm';
+export {
+  parseFormToMutation,
+  connect,
+  save,
+  create
+} from './parseFormToMutation';
+export { parseQueryToForm } from './parseQueryToForm';

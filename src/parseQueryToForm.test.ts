@@ -1,6 +1,6 @@
-import { parseQueryResultsToForm } from '.';
+import { parseQueryToForm } from '.';
 
-test('parseQueryResultsToForm - basic', () => {
+test('parseQueryToForm - basic', () => {
   const input = {
     __typename: 'Card',
     id: 'card-1',
@@ -28,7 +28,7 @@ test('parseQueryResultsToForm - basic', () => {
       }
     ]
   };
-  const output = parseQueryResultsToForm(input, {});
+  const output = parseQueryToForm(input, {});
 
   expect(output).toEqual({
     restaurant: { id: 'restaurant-1' },

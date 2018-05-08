@@ -1,7 +1,7 @@
 import deepExtend from 'deep-extend';
 import isPlainObject from 'is-pojo';
 
-export function parseQueryResultsToForm(data: any, defaults: object): object {
+export function parseQueryToForm(data: any, defaults: object): object {
   function removeProps(obj: object, keys: string[]) {
     if (obj instanceof Array) {
       obj.forEach(item => removeProps(item, keys));
