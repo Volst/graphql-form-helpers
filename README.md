@@ -114,6 +114,8 @@ Currently there are three formatters out of the box:
 * `create` - wraps an object around a `create` mutation.
 * `save` - wraps an object around an `update` mutation if there is an `id` field, or `create` if there is none.
 
+> **Psst, want to see a [real-world example](https://github.com/Volst/new-food-order/blob/64a8ccd7c7ffd437016d88d1fe394bb53739e636/frontend/src/screen/RestaurantCardEdit.tsx#L55-L80)?**
+
 ### Writing a custom formatter
 
 Writing a custom formatter is very easy!
@@ -160,6 +162,8 @@ const GET_RESTAURANT = gql`
   )}
 </Query>
 ```
+
+> **Checkout this [real-world example](https://github.com/Volst/new-food-order/blob/64a8ccd7c7ffd437016d88d1fe394bb53739e636/frontend/src/screen/RestaurantCardEdit.tsx#L55-L80)?**
 
 # Contributing
 
