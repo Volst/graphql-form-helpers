@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/gh/Volst/graphql-form-helpers/branch/master/graph/badge.svg)](https://codecov.io/gh/Volst/graphql-form-helpers)
 
-A light-weight package for dealing with complicated forms that have nested data and use GraphQL.
+A light-weight (1kb) package for dealing with complicated forms that have nested data and use GraphQL.
 
 We use it in combination with [Formik](https://github.com/jaredpalmer/formik), [Apollo Client](https://github.com/apollographql/apollo-client) and [Prisma](https://www.prisma.io/), but it is not specific to one of those.
 
