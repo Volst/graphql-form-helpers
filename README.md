@@ -158,3 +158,7 @@ const GET_RESTAURANT = gql`
   )}
 </Query>
 ```
+
+# Contributing
+
+This project is still in early phases. Please don't hesistate to create an issue with feedback or send a PR! See [contributing guide](./CONTRIBUTING.md) for more info.
