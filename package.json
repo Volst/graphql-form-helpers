@@ -21,7 +21,7 @@
     "precommit": "pretty-quick --staged",
     "test": "jest --watch",
     "test-coverage": "jest --coverage",
-    "ci": "npm run -s lint && npm run -s build && nm run -s size && npm run -s test-coverage && codecov",
+    "ci": "npm run -s lint && npm run -s build && npm run -s size && npm run -s test-coverage && codecov",
     "size": "size-limit"
   },
   "devDependencies": {
