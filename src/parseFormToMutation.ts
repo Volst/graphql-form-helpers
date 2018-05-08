@@ -52,3 +52,12 @@ export function parseFormToMutation(values: object, scheme: Scheme): object {
 
   return myValues;
 }
+
+export function invariant(
+  condition: boolean,
+  message: string = 'Illegal state'
+) {
+  if (!condition) {
+    throw new Error(`[graphql-form-helpers] ${message}`);
+  }
+}

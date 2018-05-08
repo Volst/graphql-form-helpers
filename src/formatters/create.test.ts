@@ -11,3 +11,7 @@ test('connect - accept object', () => {
     create: { name: 'Drinks' }
   });
 });
+
+test('save - throw error on invalid value', () => {
+  expect(() => create(0 as any)).toThrow('Illegal value for create given');
+});

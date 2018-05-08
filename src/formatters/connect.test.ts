@@ -20,3 +20,7 @@ test('connect - accept string', () => {
     connect: { id: 'category-1' }
   });
 });
+
+test('save - throw error on invalid value', () => {
+  expect(() => connect({} as any)).toThrow('Illegal value for connect given');
+});

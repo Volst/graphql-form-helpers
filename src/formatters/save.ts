@@ -1,5 +1,18 @@
+import * as isPlainObject from 'is-pojo';
+import { invariant } from '../parseFormToMutation';
+
+export interface IValues {
+  id?: string;
+  [key: string]: any;
+}
+
 // We don't call it `upsert`, because Prisma has a mutation named that way and we don't want to imply it is that.
-export function save(values?: any[] | any) {
+export function save(values?: IValues[] | IValues | null) {
+  invariant(
+    values == null || Array.isArray(values) || isPlainObject(values),
+    'Illegal value for save given'
+  );
+
   if (values) {
     const output: { create?: any; update?: any } = {};
     const creates: any[] = [];
