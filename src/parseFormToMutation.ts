@@ -53,10 +53,12 @@ export function parseFormToMutation(values: object, scheme: Scheme): object {
   return myValues;
 }
 
-// TODO: should this also handle arrays?
-export function connect(id?: string) {
-  if (id) {
-    return { connect: { id } };
+export function connect(ids?: string | string[]) {
+  if (ids) {
+    if (Array.isArray(ids)) {
+      return { connect: ids.map(id => ({ id })) };
+    }
+    return { connect: { id: ids } };
   }
   return undefined;
 }

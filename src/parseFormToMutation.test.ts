@@ -211,3 +211,17 @@ test('parseFormToMutation - should handle empty cases correctly', () => {
     categories: undefined
   });
 });
+
+test('parseFormToMutation - connect should accept arrays', () => {
+  const values = {
+    categories: ['category-1', 'category-2']
+  };
+  const scheme = {
+    categories: connect
+  };
+  const formatted = parseFormToMutation(values, scheme);
+
+  expect(formatted).toEqual({
+    categories: { connect: [{ id: 'category-1' }, { id: 'category-2' }] }
+  });
+});
