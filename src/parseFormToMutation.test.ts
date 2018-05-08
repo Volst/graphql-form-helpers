@@ -74,7 +74,7 @@ test('parseFormToMutation - advanced', () => {
   });
 });
 
-test('parseFormToMutation - save relation', () => {
+test('parseFormToMutation - save array relations', () => {
   const values = {
     categories: [
       {
@@ -125,6 +125,25 @@ test('parseFormToMutation - save relation', () => {
           }
         }
       ]
+    }
+  });
+});
+
+test('parseFormToMutation - save object relations', () => {
+  const values = {
+    restaurant: { name: 'Red Wheelbarrow' },
+    organization: { id: 'org-1', name: 'fsociety' }
+  };
+  const scheme = {
+    restaurant: save,
+    organization: save
+  };
+  const formatted = parseFormToMutation(values, scheme);
+
+  expect(formatted).toEqual({
+    restaurant: { create: { name: 'Red Wheelbarrow' } },
+    organization: {
+      update: { where: { id: 'org-1' }, data: { name: 'fsociety' } }
     }
   });
 });
