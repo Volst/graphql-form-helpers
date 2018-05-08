@@ -163,7 +163,7 @@ const GET_RESTAURANT = gql`
 </Query>
 ```
 
-> **Checkout this [real-world example](https://github.com/Volst/new-food-order/blob/64a8ccd7c7ffd437016d88d1fe394bb53739e636/frontend/src/screen/RestaurantCardEdit.tsx#L55-L80)?**
+> **Checkout this [real-world example](https://github.com/Volst/new-food-order/blob/64a8ccd7c7ffd437016d88d1fe394bb53739e636/frontend/src/screen/RestaurantCardEdit.tsx#L55-L80)**
 
 # Contributing
 
