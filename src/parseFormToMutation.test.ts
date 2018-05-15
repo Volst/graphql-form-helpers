@@ -16,6 +16,25 @@ test('parseFormToMutation - basic', () => {
   });
 });
 
+test('parseFormToMutation - Nested Scheme with null root', () => {
+  const values = {
+    name: 'Summer season',
+    organization: null
+  };
+  const scheme = {
+    organization: {
+      __format: create,
+      address: create
+    }
+  };
+  const formatted = parseFormToMutation(values, scheme);
+
+  expect(formatted).toEqual({
+    name: 'Summer season',
+    organization: null
+  });
+});
+
 test('parseFormToMutation - advanced', () => {
   const values = {
     categories: [

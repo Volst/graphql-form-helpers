@@ -40,11 +40,11 @@ export function parseFormToMutation(values: object, scheme: Scheme): object {
             currentValue.forEach(value =>
               traverseScheme(value, action as Scheme, key, _values)
             );
-          } else {
+          } else if (currentValue) {
             applyParentAction(currentValue, action as Scheme, key, _values);
             traverseScheme(currentValue, action as Scheme, key, _values);
           }
-        } else {
+        } else if (_values) {
           _values[key] = (action as ActionFn)(currentValue);
         }
       });
