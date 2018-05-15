@@ -1,5 +1,7 @@
-import * as merge from 'deepmerge';
+import * as _merge from 'deepmerge';
 import * as isPlainObject from 'is-pojo';
+
+const merge = _merge.default || _merge;
 
 export type ActionFn = ((value: any) => any);
 export interface Scheme {
