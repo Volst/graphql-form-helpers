@@ -38,7 +38,7 @@ export function save(values?: IValues[] | IValues | null) {
       const id = values.id;
       delete values.id;
       if (id) {
-        output.update = { where: { id }, data: values };
+        output.update = values;
       } else {
         output.create = values;
       }
