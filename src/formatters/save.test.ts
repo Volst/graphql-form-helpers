@@ -23,11 +23,8 @@ test('save - accept object', () => {
   expect(formatted).toEqual({
     restaurant: {
       update: {
-        where: { id: 'restaurant-1' },
-        data: {
-          name: 'Red Wheelbarrow',
-          organization: { create: { name: 'fsociety' } }
-        }
+        name: 'Red Wheelbarrow',
+        organization: { create: { name: 'fsociety' } }
       }
     }
   });
